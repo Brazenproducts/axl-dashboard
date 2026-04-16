@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Axl Dashboard</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background:#0f1117; color:#e1e4e8; padding:20px; }
+h1 { font-size:24px; margin-bottom:4px; color:#fff; }
+.subtitle { color:#8b949e; margin-bottom:24px; font-size:14px; }
+.tabs { display:flex; gap:8px; margin-bottom:20px; }
+.tab { padding:8px 16px; border-radius:6px; cursor:pointer; background:#161b22; border:1px solid #30363d; color:#8b949e; font-size:13px; }
+.tab.active { background:#1f6feb; border-color:#1f6feb; color:#fff; }
+table { width:100%; border-collapse:collapse; font-size:13px; }
+th { text-align:left; padding:10px 12px; background:#161b22; border-bottom:2px solid #30363d; color:#8b949e; font-weight:600; text-transform:uppercase; font-size:11px; letter-spacing:0.5px; position:sticky; top:0; }
+td { padding:10px 12px; border-bottom:1px solid #21262d; }
+tr:hover { background:#161b22; }
+.status-live { color:#3fb950; font-weight:600; }
+.status-http { color:#d29922; font-weight:600; }
+.status-building { color:#58a6ff; font-weight:600; }
+.status-queued { color:#8b949e; }
+.badge { display:inline-block; padding:2px 8px; border-radius:12px; font-size:11px; font-weight:600; }
+.badge-yes { background:#1a3a2a; color:#3fb950; }
+.badge-no { background:#3d1f1f; color:#f85149; }
+.badge-pending { background:#3d2e00; color:#d29922; }
+.template { display:inline-block; padding:2px 8px; border-radius:4px; font-size:11px; background:#21262d; color:#c9d1d9; }
+a { color:#58a6ff; text-decoration:none; }
+a:hover { text-decoration:underline; }
+.stats { display:flex; gap:16px; margin-bottom:24px; }
+.stat-card { background:#161b22; border:1px solid #30363d; border-radius:8px; padding:16px 20px; flex:1; }
+.stat-num { font-size:28px; font-weight:700; color:#fff; }
+.stat-label { font-size:12px; color:#8b949e; margin-top:4px; }
+.updated { color:#484f58; font-size:11px; margin-top:20px; text-align:right; }
+</style>
+</head>
+<body>
+<h1>🎸 Axl Dashboard</h1>
+<p class="subtitle">Affiliate Site Network — Status & Tracking</p>
+
+<div class="stats">
+<div class="stat-card"><div class="stat-num" id="total">22</div><div class="stat-label">Total Sites</div></div>
+<div class="stat-card"><div class="stat-num status-live" id="live">9</div><div class="stat-label">Live & HTTPS</div></div>
+<div class="stat-card"><div class="stat-num status-http" id="pending">5</div><div class="stat-label">HTTP Only (Cert Pending)</div></div>
+<div class="stat-card"><div class="stat-num status-building" id="building">8</div><div class="stat-label">Building</div></div>
+</div>
+
+<table>
+<thead>
+<tr><th>#</th><th>Domain</th><th>Template</th><th>Status</th><th>HTTPS</th><th>Pages</th><th>Backlinks To</th><th>Category</th><th>Notes</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td><a href="https://limitstraps.com" target="_blank">limitstraps.com</a></td><td><span class="template">Dark</span></td><td class="status-live">✅ Live</td><td><span class="badge badge-yes">Yes</span></td><td>5</td><td>bartact.com, bullstrap.com</td><td>Limit Straps</td><td>Deep links to collection pages</td></tr>
+<tr><td>2</td><td><a href="https://bestseatcover.com" target="_blank">bestseatcover.com</a></td><td><span class="template">Dark</span></td><td class="status-live">✅ Live</td><td><span class="badge badge-yes">Yes</span></td><td>7</td><td>bartact.com</td><td>Seat Covers</td><td>Vehicle-specific deep links updated</td></tr>
+<tr><td>3</td><td><a href="https://bestbroncoaccessories.com" target="_blank">bestbroncoaccessories.com</a></td><td><span class="template">Dark</span></td><td class="status-live">✅ Live</td><td><span class="badge badge-yes">Yes</span></td><td>5</td><td>bartact.com, bullstrap.com</td><td>Bronco Accessories</td><td>9 deep links updated across 4 files</td></tr>
+<tr><td>4</td><td><a href="https://besttruckaccessories.com" target="_blank">besttruckaccessories.com</a></td><td><span class="template">Dark</span></td><td class="status-live">✅ Live</td><td><span class="badge badge-yes">Yes</span></td><td>4</td><td>bartact.com</td><td>Truck Accessories</td><td>4 deep links updated</td></tr>
+<tr><td>5</td><td><a href="https://besttonneaucovers.com" target="_blank">besttonneaucovers.com</a></td><td><span class="template">Dark</span></td><td class="status-live">✅ Live</td><td><span class="badge badge-yes">Yes</span></td><td>4</td><td>bullstrap.com</td><td>Tonneau Covers</td><td>Already had deep links</td></tr>
+<tr><td>6</td><td><a href="https://bestcordlesstools.com" target="_blank">bestcordlesstools.com</a></td><td><span class="template">Dark</span></td><td class="status-live">✅ Live</td><td><span class="badge badge-yes">Yes</span></td><td>5</td><td>—</td><td>Cordless Tools</td><td>No Bartact relevance</td></tr>
+<tr><td>7</td><td><a href="https://bestfirestick.com" target="_blank">bestfirestick.com</a></td><td><span class="template">Dark</span></td><td class="status-live">✅ Live</td><td><span class="badge badge-yes">Yes</span></td><td>4</td><td>—</td><td>Streaming</td><td>No Bartact relevance</td></tr>
+<tr><td>8</td><td><a href="https://jeepseatcover.com" target="_blank">jeepseatcover.com</a></td><td><span class="template">Dark</span></td><td class="status-live">✅ Live</td><td><span class="badge badge-yes">Yes</span></td><td>6</td><td>bartact.com, bullstrap.com</td><td>Jeep Seat Covers</td><td>5 deep links updated across model pages</td></tr>
+<tr><td>9</td><td><a href="https://petwearhouse.com" target="_blank">petwearhouse.com</a></td><td><span class="template">Dark</span></td><td class="status-live">✅ Live</td><td><span class="badge badge-yes">Yes</span></td><td>4</td><td>bartact.com</td><td>Pet Gear</td><td>6 links → /collections/pet-gear</td></tr>
+<tr><td>10</td><td><a href="http://whatarebest.com" target="_blank">whatarebest.com</a></td><td><span class="template">Dark</span></td><td class="status-http">⚠️ HTTP Only</td><td><span class="badge badge-pending">Pending</span></td><td>5</td><td>bartact.com, bullstrap.com</td><td>Hub/General</td><td>DNS fixed, cert pending</td></tr>
+<tr><td>11</td><td><a href="http://bestinstantpot.com" target="_blank">bestinstantpot.com</a></td><td><span class="template">Dark</span></td><td class="status-http">⚠️ HTTP Only</td><td><span class="badge badge-pending">Pending</span></td><td>3</td><td>—</td><td>Kitchen</td><td>DNS fixed, cert pending</td></tr>
+<tr><td>12</td><td><a href="http://bestsmokergrill.com" target="_blank">bestsmokergrill.com</a></td><td><span class="template">Dark</span></td><td class="status-http">⚠️ HTTP Only</td><td><span class="badge badge-pending">Pending</span></td><td>3</td><td>—</td><td>Grills</td><td>DNS fixed, cert pending</td></tr>
+<tr><td>13</td><td><a href="http://bestmeshwifi.com" target="_blank">bestmeshwifi.com</a></td><td><span class="template">Dark</span></td><td class="status-http">⚠️ HTTP Only</td><td><span class="badge badge-pending">Pending</span></td><td>3</td><td>—</td><td>WiFi/Tech</td><td>DNS fixed, cert pending</td></tr>
+<tr><td>14</td><td><a href="http://bestgarageorganizer.com" target="_blank">bestgarageorganizer.com</a></td><td><span class="template">Dark</span></td><td class="status-http">⚠️ HTTP Only</td><td><span class="badge badge-pending">Pending</span></td><td>3</td><td>—</td><td>Garage/Home</td><td>DNS fixed, cert pending</td></tr>
+<tr><td>15</td><td>autopartsreviewed.com</td><td><span class="template">T2 Magazine</span></td><td class="status-building">🔨 Building</td><td><span class="badge badge-no">No</span></td><td>—</td><td>bullstrap.com, bartact.com</td><td>Store Directory</td><td>Sub-agent building now</td></tr>
+<tr><td>16</td><td>topoffroadstores.com</td><td><span class="template">T3 Dark</span></td><td class="status-building">🔨 Building</td><td><span class="badge badge-no">No</span></td><td>—</td><td>bartact.com, bullstrap.com</td><td>Off-Road Stores</td><td>Kartek #1, Bull Strap #2</td></tr>
+<tr><td>17</td><td>bestoffroadbrands.com</td><td><span class="template">T1 Clean</span></td><td class="status-building">🔨 Building</td><td><span class="badge badge-no">No</span></td><td>—</td><td>bartact.com, bullstrap.com</td><td>Off-Road Brands</td><td>Brand profiles + category pages</td></tr>
+<tr><td>18</td><td>tacticalseats.com</td><td><span class="template">T1 Clean</span></td><td class="status-building">🔨 Building</td><td><span class="badge badge-no">No</span></td><td>—</td><td>bartact.com</td><td>Tactical Seats</td><td>Bartact = #1 tactical seat cover</td></tr>
+<tr><td>19</td><td>homehvacfilters.com</td><td><span class="template">T2 Magazine</span></td><td class="status-building">🔨 Building</td><td><span class="badge badge-no">No</span></td><td>—</td><td>Amazon</td><td>HVAC Filters</td><td>BowTie/Factor added later</td></tr>
+<tr><td>20</td><td>bestwindshieldwiper.com</td><td><span class="template">T4 Comparison</span></td><td class="status-building">🔨 Building</td><td><span class="badge badge-no">No</span></td><td>—</td><td>Amazon</td><td>Wipers</td><td>Switchblade added later</td></tr>
+<tr><td>21</td><td>tacticalseatcovers.com</td><td><span class="template">T3 Dark</span></td><td class="status-building">🔨 Building</td><td><span class="badge badge-no">No</span></td><td>—</td><td>bartact.com</td><td>Tactical Covers</td><td>Bartact = undisputed #1</td></tr>
+<tr><td>22</td><td>tacomaseats.com</td><td><span class="template">T5 Blog</span></td><td class="status-building">🔨 Building</td><td><span class="badge badge-no">No</span></td><td>—</td><td>bartact.com</td><td>Tacoma Seats</td><td>Bartact Tacoma 2005-2023</td></tr>
+</tbody>
+</table>
+
+<p class="updated">Last updated: April 16, 2026 9:57 PM UTC by Axl</p>
+</body>
+</html>
