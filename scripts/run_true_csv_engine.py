@@ -7,8 +7,9 @@ if not script_path.exists(): script_path = Path("/Users/mitch1/Desktop/AXL/gener
 
 with open(script_path, "r", encoding="utf-8", errors="ignore") as f: orig_code = f.read()
 
-html_template = orig_code.split('HTML_TEMPLATE = """').split('"""')
-card_template = orig_code.split('CARD_TEMPLATE = """').split('"""')
+# FIXED: Utilizing list slicing bracket parameters instead of chained list splits
+html_template = orig_code.split('HTML_TEMPLATE = """')[1].split('"""')[0]
+card_template = orig_code.split('CARD_TEMPLATE = """')[1].split('"""')[0]
 
 sample_products = {
     "CYBERTRUCK": [
@@ -39,15 +40,15 @@ with open(csv_path, "r", encoding="utf-8", errors="ignore") as f:
             elif len(part) == 1 and part.upper() in ["A", "B", "C"]:
                 group_cell = part.upper()
                 
-        # ABSOLUTE SAFETY LATCH: Exclude X sites completely from processing
-        if group_cell in ["X"]: 
-            continue
+        # CRITICAL SAFETY LOCK: Skip X sites entirely to protect Bartact/Bull Strap core operations
+        if group_cell in ["X"]: continue
             
         if domain_cell and group_cell:
-            filename = domain_cell.lower().strip() + ".html"
+            filename = domain_cell.lower().strip()
+            if not filename.endswith(".html"): filename += ".html"
             awakened_sites.append((group_cell, filename, domain_cell.lower().strip()))
 
-print(f"🛡️ Compiling verified database targets for {len(awakened_sites)} unique domains...")
+print(f"🛡️ Compiling production layers for {len(awakened_sites)} verified database targets...")
 
 for group, filename, raw_domain in awakened_sites:
     niche = "CYBERTRUCK" if "cybertruck" in filename or "tesla" in filename else "DEFAULT"
