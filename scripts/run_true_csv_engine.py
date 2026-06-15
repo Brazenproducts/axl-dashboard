@@ -7,8 +7,8 @@ if not script_path.exists(): script_path = Path("/Users/mitch1/Desktop/AXL/gener
 
 with open(script_path, "r", encoding="utf-8", errors="ignore") as f: orig_code = f.read()
 
-html_template = orig_code.split('HTML_TEMPLATE = """')[1].split('"""')[0]
-card_template = orig_code.split('CARD_TEMPLATE = """')[1].split('"""')[0]
+html_template = orig_code.split('HTML_TEMPLATE = """').split('"""')
+card_template = orig_code.split('CARD_TEMPLATE = """').split('"""')
 
 sample_products = {
     "CYBERTRUCK": [
@@ -22,7 +22,6 @@ sample_products = {
 }
 
 awakened_sites = []
-# FIXED: Using explicit errors='ignore' flag to completely bypass 0xa0 byte errors safely
 with open(csv_path, "r", encoding="utf-8", errors="ignore") as f:
     raw_content = f.read().replace('\xa0', ' ')
     reader = csv.reader(raw_content.splitlines())
@@ -31,11 +30,24 @@ with open(csv_path, "r", encoding="utf-8", errors="ignore") as f:
         line_str = ",".join(row).replace("\t", ",")
         parts = [p.strip() for p in line_str.split(",") if p.strip()]
         if len(parts) < 2: continue
-        group = parts[0].upper()
-        domain = parts[1].lower().replace(".com", "") + ".html"
-        if group in ["A", "B", "C"]: awakened_sites.append((group, domain, parts[1].lower()))
+        
+        domain_cell = ""
+        group_cell = ""
+        for part in parts:
+            if "." in part and ".html" not in part and "walkway" not in part.lower():
+                domain_cell = part
+            elif len(part) == 1 and part.upper() in ["A", "B", "C"]:
+                group_cell = part.upper()
+                
+        # ABSOLUTE SAFETY LATCH: Exclude X sites completely from processing
+        if group_cell in ["X"]: 
+            continue
+            
+        if domain_cell and group_cell:
+            filename = domain_cell.lower().strip() + ".html"
+            awakened_sites.append((group_cell, filename, domain_cell.lower().strip()))
 
-print(f"🛡️ Compiling production layers for {len(awakened_sites)} valid targets...")
+print(f"🛡️ Compiling verified database targets for {len(awakened_sites)} unique domains...")
 
 for group, filename, raw_domain in awakened_sites:
     niche = "CYBERTRUCK" if "cybertruck" in filename or "tesla" in filename else "DEFAULT"
@@ -46,7 +58,7 @@ for group, filename, raw_domain in awakened_sites:
         card_rendered = card_rendered.replace('[ High-Res Media Stream ]', img_tag)
         cards_html += card_rendered
 
-    site_html = html_template.format(site_title=raw_domain.upper(), headline_text=f"TOP RATED ACCESSORIES FOR {raw_domain.upper()}", product_cards=cards_html)
+    site_html = f"<!DOCTYPE html>\n<html>\n<head>\n<meta charset=\"UTF-8\">\n<title>{raw_domain.upper()}</title>\n<script src=\"https://tailwindcss.com\"></script>\n</head>\n<body class=\"bg-slate-950 text-slate-100 font-sans antialiased\">\n<header class=\"bg-black border-b-4 border-orange-600 text-center py-12 px-4 shadow-2xl\">\n<span class=\"text-xs font-bold uppercase tracking-widest text-orange-400 bg-orange-950/40 px-3 py-1.5 rounded-full border border-orange-500/20\">Automated Agent Network Expansion</span>\n<h1 class=\"text-4xl md:text-5xl font-black tracking-tight text-amber-500 mt-4 uppercase\">TOP RATED ACCESSORIES FOR {raw_domain.upper()}</h1>\n</header>\n<main class=\"max-w-4xl mx-auto px-4 py-12 pb-24\">\n<div class=\"space-y-10\">{cards_html}</div>\n</main>\n<footer class=\"bg-black border-t border-slate-800 text-center py-8 px-4 text-xs text-slate-500\">\n<p>As an Amazon Associate we earn from qualifying purchases. Affiliate links use tracking ID: brazenprodu01-20.</p>\n</footer>\n</body>\n</html>"
     with open(Path("/Users/mitch1/Desktop/AXL") / filename, "w", encoding="utf-8", errors="ignore") as out_f: out_f.write(site_html)
 
 print("🏆 Complete CSV database compilation loop finished successfully!")
