@@ -1,0 +1,17 @@
+---
+[Mon 2026-06-08 19:29 UTC] ERROR DESTECTED
+
+Job: Bartact Daily Blog Post
+Script: scripts/bartact-blog-generator.js
+Error: LLM request failed: provider rejected the request schema or tool payload
+Action needed: The blog generator cron job is passing an invalid tool schema to the LLM. Need to review the job payload and fix the tool/model configuration.
+---
+
+---
+[Mon 2026-06-08 19:29 UTC] ERROR DETECTED
+
+Job: Bartact SEO Weekly Monitor
+Script: Google Search Console API (/.gcp-service-account.json)
+Error: Cron job execution timed out (600s limit)
+Action needed: The SEO weekly monitor is taking longer than 10 minutes. Need to optimize the GSC query or increase the timeout. Script: scripts run via gcp-service-account.json GSC API call.
+---

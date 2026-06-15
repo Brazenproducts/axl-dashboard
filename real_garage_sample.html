@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top Rated Garage Heaters | </title>
+    <meta name="description" content="">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* ============================================================
+           MASTER DARK THEME - AXL GROUP A PORTFOLIO
+           ============================================================ */
+
+        :root {
+            --color-bg-primary:     #0f0f0f;
+            --color-bg-secondary:   #1a1a1a;
+            --color-bg-card:        #1e1e1e;
+            --color-border-primary: #e85d04;
+            --color-border-accent:  #dc2f02;
+            --color-text-primary:   #f5f5f5;
+            --color-text-secondary: #a3a3a3;
+            --color-text-price:     #f97316;
+            --color-cta-bg:         #e85d04;
+            --color-cta-hover:      #dc2f02;
+            --color-badge-bg:       #dc2f02;
+            --color-stars:          #f97316;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--color-bg-primary);
+            color: var(--color-text-primary);
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* ---- HEADER ---- */
+        .site-header {
+            background-color: var(--color-bg-secondary);
+            border-bottom: 3px solid var(--color-border-primary);
+            padding: 1.5rem 2rem;
+            text-align: center;
+        }
+
+        .site-header h1 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--color-text-primary);
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+
+        .site-header .tagline {
+            font-size: 1rem;
+            color: var(--color-text-secondary);
+            margin-top: 0.4rem;
+        }
+
+        /* ---- NAVIGATION ---- */
+        .site-nav {
+            background-color: #111111;
+            border-bottom: 1px solid #2a2a2a;
+            padding: 0.75rem 2rem;
+            text-align: center;
+        }
+
+        .site-nav a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.2s ease;
+        }
+
+        .site-nav a:hover {
+            color: var(--color-border-primary);
+        }
+
+        /* ---- HERO SECTION ---- */
+        .hero-section {
+            background: linear-gradient(
+                135deg,
+                #1a0a00 0%,
+                #2d1200 50%,
+                #1a0a00 100%
+            );
+            border-bottom: 2px solid var(--color-border-accent);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .hero-section h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .hero-section p {
+            font-size: 1.05rem;
+            color: var(--color-text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ---- PRODUCT GRID ---- */
+        .products-section {
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            margin-bottom: 2rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--color-border-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.75rem;
+        }
+
+        /* ---- PRODUCT CARD ---- */
+        .product-card {
+            background-color: var(--color-bg-card);
+            border: 1px solid #2a2a2a;
+            border-top: 3px solid var(--color-border-primary);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--color-border-accent);
+        }
+
+        /* ---- BADGE ---- */
+        .badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background-color: var(--color-badge-bg);
+            color: #ffffff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            z-index: 10;
+        }
+
+        /* ---- CARD IMAGE ---- */
+        .card-image-wrapper {
+            background-color: #161616;
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .card-image {
+            max-height: 200px;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        /* ---- CARD BODY ---- */
+        .card-body {
+            padding: 1.25rem;
+        }
+
+        .card-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            line-height: 1.4;
+            margin-bottom: 0.6rem;
+        }
+
+        /* ---- RATING ---- */
+        .card-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .stars {
+            color: var(--color-stars);
+            font-size: 0.95rem;
+        }
+
+        .rating-score {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--color-text-primary);
+        }
+
+        .review-count {
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+        }
+
+        /* ---- DESCRIPTION ---- */
+        .card-description {
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            line-height: 1.55;
+            margin-bottom: 1rem;
+        }
+
+        /* ---- CARD FOOTER ---- */
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid #2a2a2a;
+        }
+
+        .card-price {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--color-text-price);
+        }
+
+        /* ---- CTA BUTTON ---- */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--color-cta-bg);
+            color: #ffffff;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.6rem 1.1rem;
+            border-radius: 5px;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            white-space: nowrap;
+        }
+
+        .cta-button:hover {
+            background-color: var(--color-cta-hover);
+            transform: scale(1.03);
+        }
+
+        /* ---- EMPTY STATE ---- */
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--color-text-secondary);
+            border: 2px dashed #2a2a2a;
+            border-radius: 8px;
+            grid-column: 1 / -1;
+        }
+
+        /* ---- FOOTER ---- */
+        .site-footer {
+            background-color: var(--color-bg-secondary);
+            border-top: 2px solid var(--color-border-primary);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .site-footer p {
+            font-size: 0.82rem;
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+        }
+
+        .site-footer .disclaimer {
+            margin-top: 0.75rem;
+            font-size: 0.75rem;
+            color: #666666;
+        }
+
+        /* ---- RESPONSIVE ---- */
+        @media (max-width: 640px) {
+            .site-header h1 {
+                font-size: 1.5rem;
+            }
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            .card-footer {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- DARK HEADER -->
+    <header class="site-header">
+        <h1>Top Rated Garage Heaters</h1>
+        <p class="tagline"></p>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav class="site-nav">
+        <a href="#reviews">Reviews</a>
+        <a href="#top-picks">Top Picks</a>
+        <a href="#buying-guide">Buying Guide</a>
+        <a href="#faq">FAQ</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero-section">
+        <h2>Find the Best Top Rated Garage Heaters in 2025</h2>
+        <p>
+            Expert reviews, side-by-side comparisons, and verified buyer ratings
+            to help you make the right purchase decision.
+        </p>
+    </section>
+
+    <!-- PRODUCT GRID -->
+    <main class="products-section" id="reviews">
+        <h2 class="section-title">Top Rated Products — 2025</h2>
+        <div class="products-grid">
+            
+        <!-- Product Card: 1. Mr. Heater Big Maxx 50k BTU Garage Heater -->
+        <div class="product-card">
+            
+            <div class="card-image-wrapper">
+                <img 
+                    src="" 
+                    alt="1. Mr. Heater Big Maxx 50k BTU Garage Heater"
+                    class="card-image"
+                    loading="lazy"
+                />
+            </div>
+            <div class="card-body">
+                <h2 class="card-title">1. Mr. Heater Big Maxx 50k BTU Garage Heater</h2>
+                <div class="card-rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-score"></span>
+                    <span class="review-count">( reviews)</span>
+                </div>
+                <p class="card-description"></p>
+                <div class="card-footer">
+                    <span class="card-price">$626.59</span>
+                    <a 
+                        href="#" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="cta-button"
+                    >
+                        Check Price on Amazon
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Product Card: 2. Dyna-Glo Heavy Duty 30k BTU Forced-Air Heater -->
+        <div class="product-card">
+            
+            <div class="card-image-wrapper">
+                <img 
+                    src="" 
+                    alt="2. Dyna-Glo Heavy Duty 30k BTU Forced-Air Heater"
+                    class="card-image"
+                    loading="lazy"
+                />
+            </div>
+            <div class="card-body">
+                <h2 class="card-title">2. Dyna-Glo Heavy Duty 30k BTU Forced-Air Heater</h2>
+                <div class="card-rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-score"></span>
+                    <span class="review-count">( reviews)</span>
+                </div>
+                <p class="card-description"></p>
+                <div class="card-footer">
+                    <span class="card-price">$189.99</span>
+                    <a 
+                        href="#" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="cta-button"
+                    >
+                        Check Price on Amazon
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <p>Top Rated Garage Heaters &mdash; Independent Product Reviews</p>
+        <p class="disclaimer">
+            As an Amazon Associate we earn from qualifying purchases. 
+            Affiliate links on this page use tracking ID: brazenprodu01-20.
+            Prices and availability are subject to change.
+        </p>
+    </footer>
+
+</body>
+</html>
