@@ -1,11 +1,10 @@
 import csv
-import os
 from pathlib import Path
 
 csv_path = Path("/Users/mitch1/Desktop/AXL/website_overhaul_list.csv")
-dist_dir = Path("/Users/mitch1/Desktop/AXL")
+# TARGETING ROOT LEVEL: Forcing the script to write directly to the active root directory
+root_dir = Path("/Users/mitch1/Desktop/AXL")
 
-# FIXED ASIN ENGINE: Hardcoded verified, responsive product arrays for the fleet
 products_cybertruck = [
     {"title": "Coverking Ballistic Tactical Seat Covers", "price": "$249.99", "image_id": "81xT+OsgH9L", "bullet": "<li>Custom-fit 2024-2026 Tesla Cybertruck positioning</li><li>Authentic 1680 Denier Ballistic protection rating</li><li>Integrated rear storage MOLLE modular layout straps</li>"},
     {"title": "Lasfit All-Weather Custom TPE Floor Liners", "price": "$129.99", "image_id": "71vK+7S6yOL", "bullet": "<li>Laser measured injection molded fitment frames</li><li>Eco-friendly extreme temperature endurance grid</li><li>High vertical walls trap fluids and trail debris</li>"}
@@ -16,7 +15,6 @@ products_default = [
     {"title": "Universal Industrial High-Capacity Utility Organizer", "price": "$45.50", "image_id": "71D6HwrgVmL", "bullet": "<li>Reinforced rigid structural base panels</li><li>Dual exterior accessory attachment slots</li><li>Rapid access closure safety latch mechanisms</li>"}
 ]
 
-# Duplicate rows to ensure full 15-product list rendering matrix
 while len(products_default) < 15:
     products_default.append(products_default[len(products_default) % 2])
 
@@ -35,14 +33,14 @@ with open(csv_path, "r", encoding="utf-8", errors="ignore") as f:
             if "." in part and ".html" not in part and "walkway" not in part.lower(): domain_cell = part
             elif len(part) == 1 and part.upper() in ["A", "B", "C"]: group_cell = part.upper()
                 
-        if group_cell in ["X"]: continue
+        # STRICT PROTECTION GUARD: Completely exclude Groups C and X to isolate operations
+        if group_cell in ["C", "X"]: continue
         if domain_cell and group_cell:
-            raw_domain = domain_cell.lower().strip()
-            # FIXED KEYBOARD DEFECT: Forcing exact flat root file extensions
+            raw_domain = domain_cell.lower().strip().replace(".com", "")
             filename = f"{raw_domain}.html"
             awakened_sites.append((group_cell, filename, raw_domain))
 
-print(f"🛡️ Running script compiler engine for {len(awakened_sites)} verified database targets...")
+print(f"🛡️ Compiling pristine layouts directly to root for {len(awakened_sites)} targets...")
 
 for group, filename, raw_domain in awakened_sites:
     niche = "CYBERTRUCK" if "cybertruck" in filename or "tesla" in filename else "DEFAULT"
@@ -73,7 +71,7 @@ for group, filename, raw_domain in awakened_sites:
 
     site_html = f"<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=5.0\">\n<title>{raw_domain.upper()}</title>\n<script src=\"https://tailwindcss.com\"></script>\n</head>\n<body class=\"bg-slate-950 text-slate-100 font-sans antialiased overflow-x-hidden w-full\">\n<header class=\"bg-black border-b-4 border-orange-600 text-center py-12 px-4 shadow-2xl w-full\">\n<span class=\"text-xs font-bold uppercase tracking-widest text-orange-400 bg-orange-950/40 px-3 py-1.5 rounded-full border border-orange-500/20\">Automated Agent Network Expansion</span>\n<h1 class=\"text-3xl md:text-5xl font-black tracking-tight text-amber-500 mt-4 uppercase\">TOP RATED ACCESSORIES FOR {raw_domain.upper()}</h1>\n</header>\n<main class=\"max-w-4xl mx-auto px-4 py-12 pb-24 w-full\">\n<div class=\"space-y-10 w-full flex flex-col items-center\">{cards_html}</div>\n</main>\n<footer class=\"bg-black border-t border-slate-800 text-center py-8 px-4 text-xs text-slate-500 w-full\">\n<p>As an Amazon Associate we earn from qualifying purchases. Affiliate links use tracking ID: brazenprodu01-20.</p>\n</footer>\n</body>\n</html>"
     
-    with open(dist_dir / filename, "w", encoding="utf-8", errors="ignore") as out_f:
+    with open(root_dir / filename, "w", encoding="utf-8", errors="ignore") as out_f:
         out_f.write(site_html)
 
 print("🏆 Complete CSV database compilation loop finished successfully!")
