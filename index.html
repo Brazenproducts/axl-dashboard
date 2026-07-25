@@ -9,166 +9,371 @@
   body { background: #0f1117; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; padding: 24px; }
   h1 { color: #ff4b6e; font-size: 2rem; margin-bottom: 4px; }
   .subtitle { color: #888; font-size: 0.9rem; margin-bottom: 24px; }
-  .alert-banner { background: #2d0a0a; border: 2px solid #ef4444; border-radius: 10px; padding: 16px 20px; margin-bottom: 24px; }
-  .alert-banner h2 { color: #ef4444; font-size: 1.1rem; margin-bottom: 6px; }
-  .alert-banner p { color: #fca5a5; font-size: 0.88rem; }
   .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-bottom: 28px; }
   .stat-card { background: #1a1d27; border: 1px solid #2a2d3a; border-radius: 10px; padding: 14px; text-align: center; }
   .stat-card .num { font-size: 1.8rem; font-weight: 700; color: #ff4b6e; }
   .stat-card .label { font-size: 0.68rem; color: #aaa; margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
   .stat-card.green .num { color: #4caf7d; }
   .stat-card.yellow .num { color: #f0c040; }
-  .stat-card.purple .num { color: #c084fc; }
-  .stat-card.teal .num { color: #34d399; }
-  .stat-card.red .num { color: #ef4444; }
-  .stat-card.blue .num { color: #5b9cf6; }
-  .audit-note { font-size: 0.78rem; color: #666; margin-bottom: 16px; }
-  .search-bar { background: #1a1d27; border: 1px solid #2a2d3a; border-radius: 6px; padding: 8px 14px; color: #e0e0e0; font-size: 0.9rem; width: 100%; max-width: 400px; margin-bottom: 16px; }
-  .search-bar:focus { outline: none; border-color: #ff4b6e; }
-  .table-wrap { overflow-x: auto; }
-  table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
-  th { background: #1a1d27; color: #ff4b6e; padding: 9px 10px; text-align: left; border-bottom: 2px solid #2a2d3a; white-space: nowrap; }
-  td { padding: 7px 10px; border-bottom: 1px solid #1a1d27; vertical-align: middle; }
-  tr:hover td { background: #15182080; }
-  h2 { color: #ff4b6e; font-size: 1.1rem; margin: 28px 0 12px; }
-  .breakdown { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
-  .bk { background: #1a1d27; border: 1px solid #2a2d3a; border-radius: 8px; padding: 12px 18px; }
-  .bk .n { font-size: 1.4rem; font-weight: 700; }
-  .bk .l { font-size: 0.7rem; color: #aaa; text-transform: uppercase; margin-top: 2px; }
+  .stat-card.blue .num { color: #60a5fa; }
+  .section { margin-bottom: 28px; }
+  .section h2 { font-size: 1.1rem; color: #ccc; border-bottom: 1px solid #2a2d3a; padding-bottom: 8px; margin-bottom: 12px; }
+  .ok-badge { display: inline-block; background: #0d2a1c; color: #4caf7d; border: 1px solid #4caf7d44; border-radius: 6px; padding: 3px 10px; font-size: 0.8rem; margin: 3px; }
+  .warn-badge { display: inline-block; background: #2a2000; color: #f0c040; border: 1px solid #f0c04044; border-radius: 6px; padding: 3px 10px; font-size: 0.8rem; margin: 3px; }
+  .crit-row { background: #1a1d27; border-left: 3px solid #ef4444; border-radius: 6px; padding: 8px 12px; margin-bottom: 6px; font-size: 0.82rem; }
+  .crit-domain { color: #fca5a5; font-weight: 600; }
+  .crit-issues { color: #888; margin-top: 2px; font-size: 0.75rem; }
+  .delta-up { color: #ef4444; }
+  .delta-same { color: #888; }
+  .delta-down { color: #4caf7d; }
+  .footer { color: #444; font-size: 0.75rem; margin-top: 32px; text-align: center; }
 </style>
 </head>
 <body>
-<h1>🦅 Axl Affiliate Network Dashboard</h1>
-<div class="subtitle">Daily Audit — 2026-07-24 06:00 UTC &nbsp;|&nbsp; 733 sites</div>
-
-<div class="alert-banner">
-  <h2>🚨 CRITICAL: 286 Sites Down — 286 new since last run (2026-05-18)</h2>
-  <p>SSL cert mismatch: 234 sites &nbsp;|&nbsp; DNS failures: 26 sites &nbsp;|&nbsp; HTTP 404: 24 sites &nbsp;|&nbsp; See memory/affiliate-audit-CRITICAL.md</p>
-</div>
+<h1>⚡ Axl Affiliate Dashboard</h1>
+<p class="subtitle">Daily audit · 2026-07-25 06:01 UTC · 735 sites scanned</p>
 
 <div class="stats-grid">
-  <div class="stat-card green"><div class="num">37</div><div class="label">✅ OK</div></div>
-  <div class="stat-card yellow"><div class="num">56</div><div class="label">⚠️ Warning</div></div>
-  <div class="stat-card red"><div class="num">640</div><div class="label">🔴 Critical</div></div>
-  <div class="stat-card red"><div class="num">286</div><div class="label">🔴 Sites Down</div></div>
-  <div class="stat-card yellow"><div class="num">234</div><div class="label">SSL Mismatch</div></div>
-  <div class="stat-card"><div class="num">26</div><div class="label">DNS Fail</div></div>
-  <div class="stat-card"><div class="num">24</div><div class="label">HTTP 404</div></div>
-  <div class="stat-card purple"><div class="num">623</div><div class="label">Missing Tags</div></div>
-  <div class="stat-card blue"><div class="num">581</div><div class="label">No Privacy Page</div></div>
-  <div class="stat-card"><div class="num">172</div><div class="label">Broken Links</div></div>
+  <div class="stat-card green">
+    <div class="num">37</div>
+    <div class="label">✅ Healthy</div>
+  </div>
+  <div class="stat-card yellow">
+    <div class="num">63</div>
+    <div class="label">⚠️ Warning</div>
+  </div>
+  <div class="stat-card">
+    <div class="num">635</div>
+    <div class="label">🔴 Critical</div>
+  </div>
+  <div class="stat-card blue">
+    <div class="num">735</div>
+    <div class="label">📦 Total Sites</div>
+  </div>
+  <div class="stat-card green">
+    <div class="num delta-same">0</div>
+    <div class="label">🆕 Newly Down</div>
+  </div>
 </div>
 
-<h2>Sites Down (showing first 100 of 286)</h2>
-<div class="table-wrap">
-<table>
-<thead><tr><th>Domain</th><th>Reason</th></tr></thead>
-<tbody>
-<tr><td>4runnerseats.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>airfilterforpets-com</td><td><span style="background:#888;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">DNS not resolving</span></td></tr>
-<tr><td>allergenairfilter-com</td><td><span style="background:#888;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">DNS not resolving</span></td></tr>
-<tr><td>altitudeparts.com</td><td><span style="background:#ef4444;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">HTTP 404</span></td></tr>
-<tr><td>autopartsreviewed-com</td><td><span style="background:#888;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">DNS not resolving</span></td></tr>
-<tr><td>autoshipfilter-com</td><td><span style="background:#888;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">DNS not resolving</span></td></tr>
-<tr><td>bestantiagingsupplement.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>bestdogtrainingcourse.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>bestdutchoven.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>besthomefilter-com</td><td><span style="background:#888;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">DNS not resolving</span></td></tr>
-<tr><td>besthvacfilter-com</td><td><span style="background:#888;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">DNS not resolving</span></td></tr>
-<tr><td>besthvacfilter.com</td><td><span style="background:#ef4444;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">HTTP 404</span></td></tr>
-<tr><td>bestkitchenscale.com</td><td><span style="background:#888;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">DNS not resolving</span></td></tr>
-<tr><td>bestlabel-maker.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>bestofficefilter-com</td><td><span style="background:#888;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">DNS not resolving</span></td></tr>
-<tr><td>bestoffroadbrands-com</td><td><span style="background:#888;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">DNS not resolving</span></td></tr>
-<tr><td>bestpastamaker.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>bestreciprocatingsaw.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>bestsousvide.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>beststandmixer.com</td><td><span style="background:#5b9cf6;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">HTTP 302 redirect</span></td></tr>
-<tr><td>besttireinflator.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>bestwindshieldwiper-com</td><td><span style="background:#888;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">DNS not resolving</span></td></tr>
-<tr><td>boxomasks.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>brandedaftermarket.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>brazenathlete.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>brazenathletes.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>brazenbags.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>brazenbologna.com</td><td><span style="background:#ef4444;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">HTTP 404</span></td></tr>
-<tr><td>brazenleather.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>bronco2022.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>broncocages.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>broncorollcages.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>bsterile.com</td><td><span style="background:#ef4444;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">HTTP 404</span></td></tr>
-<tr><td>byepillow.com</td><td><span style="background:#ef4444;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">HTTP 404</span></td></tr>
-<tr><td>calbeverage.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>cleanbuttle.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>coldbeerbranding.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>coldbrewbranding.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>commandeerseats.com</td><td><span style="background:#888;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">DNS not resolving</span></td></tr>
-<tr><td>commanderbags.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>commandersfootballshop.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>commandersfootballsite.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>crappymade.com</td><td><span style="background:#ef4444;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">HTTP 404</span></td></tr>
-<tr><td>customcapshop.com</td><td><span style="background:#ef4444;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">HTTP 404</span></td></tr>
-<tr><td>customcapsusa.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>customgloveco.com</td><td><span style="background:#ef4444;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">HTTP 404</span></td></tr>
-<tr><td>customglovecompany.com</td><td><span style="background:#ef4444;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">HTTP 404</span></td></tr>
-<tr><td>customhatusa.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>customizedhatsusa.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>customizedhatusa.com</td><td><span style="background:#ef4444;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">HTTP 404</span></td></tr>
-<tr><td>customlabelproducts.com</td><td><span style="background:#ef4444;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">HTTP 404</span></td></tr>
-<tr><td>custompatchmaker.com</td><td><span style="background:#ef4444;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">HTTP 404</span></td></tr>
-<tr><td>customplasticcorrugate.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>devilspits.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>direcship.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>directautoclub.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>disastermodularhousing.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>downties.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>dubaifiltration.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>dubaijeep.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>dubaioverland.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>emergencyhousingcompany.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>emergencymodularhousing.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>emergencyshelterhousing.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>emptypackage.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>endurm.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>endurmis.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>fabricshopusa.com</td><td><span style="background:#ef4444;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">HTTP 404</span></td></tr>
-<tr><td>fast2find.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>federalemergencyhousing.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>fernallern.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>filterbuyguide.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>filterdubai.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>filtersdubai.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>filtersizes-com</td><td><span style="background:#888;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">DNS not resolving</span></td></tr>
-<tr><td>filterspurchase.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>filtersuae.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>filthyedge.com</td><td><span style="background:#ef4444;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">HTTP 404</span></td></tr>
-<tr><td>firestrips.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>footrubbers.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>forwardpartyshop.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>forwardpartystore.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>fun-bagz.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>furnaceprefilter-com</td><td><span style="background:#888;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">DNS not resolving</span></td></tr>
-<tr><td>furnacereview.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>garrisonhat.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>garrisonhats.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>garrisonheadwear.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>governmentemergencyhousing.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>guardiansballteam.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>handimasks.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>homehvacfilters-com</td><td><span style="background:#888;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">DNS not resolving</span></td></tr>
-<tr><td>homelesshousingunits.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>homelessshelterhousing.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>homelessshelterunits.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>hvachomefilters-com</td><td><span style="background:#888;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">DNS not resolving</span></td></tr>
-<tr><td>indexing-credentials</td><td><span style="background:#888;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">DNS not resolving</span></td></tr>
-<tr><td>interiormolle.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>janitol.com</td><td><span style="background:#f0c040;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">SSL cert mismatch (CNAME)</span></td></tr>
-<tr><td>jkseatcovers.com</td><td><span style="background:#ef4444;color:#111;padding:2px 8px;border-radius:4px;font-size:0.75rem;">HTTP 404</span></td></tr>
-
-</tbody>
-</table>
+<div class="section">
+  <h2>✅ Healthy Sites (37)</h2>
+  <div>
+    <span class="ok-badge">besttirepatch.com</span>
+    <span class="ok-badge">bigrigcovers.com</span>
+    <span class="ok-badge">broncorollbar.com</span>
+    <span class="ok-badge">cybertruckbumper.com</span>
+    <span class="ok-badge">cybertruckseatcover.com</span>
+    <span class="ok-badge">cybertruckseats.com</span>
+    <span class="ok-badge">dryvmotorsports.com</span>
+    <span class="ok-badge">exteriormolle.com</span>
+    <span class="ok-badge">gladiatorseatcover.com</span>
+    <span class="ok-badge">jeepbenchcovers.com</span>
+    <span class="ok-badge">jlcovers.com</span>
+    <span class="ok-badge">jlscrambler.com</span>
+    <span class="ok-badge">jlseatcover.com</span>
+    <span class="ok-badge">jlseats.com</span>
+    <span class="ok-badge">jluseatcovers.com</span>
+    <span class="ok-badge">jlutops.com</span>
+    <span class="ok-badge">jlutruck.com</span>
+    <span class="ok-badge">mollebag.com</span>
+    <span class="ok-badge">molleinterior.com</span>
+    <span class="ok-badge">mollesystems.com</span>
+    <span class="ok-badge">molletop.com</span>
+    <span class="ok-badge">ridgeupgrades.com</span>
+    <span class="ok-badge">ridgeutv.com</span>
+    <span class="ok-badge">scoutaccessories.com</span>
+    <span class="ok-badge">scoutupgrades.com</span>
+    <span class="ok-badge">scramblerseatcovers.com</span>
+    <span class="ok-badge">systemcovers.com</span>
+    <span class="ok-badge">tacticaltailgate.com</span>
+    <span class="ok-badge">usaseatcushion.com</span>
+    <span class="ok-badge">volconaccessories.com</span>
+    <span class="ok-badge">volconaftermarket.com</span>
+    <span class="ok-badge">volconparts.com</span>
+    <span class="ok-badge">volconseats.com</span>
+    <span class="ok-badge">wranglergrabhandles.com</span>
+    <span class="ok-badge">wranglerjeepaccessories.com</span>
+    <span class="ok-badge">wranglerseatcover.com</span>
+    <span class="ok-badge">wranglerseats.com</span>
+  </div>
 </div>
 
-<p style="color:#555;font-size:0.75rem;margin-top:24px;">Generated by axl daily audit cron · 2026-07-24 06:00 UTC · Full report: memory/affiliate-health-2026-07-24.json · Full down list: memory/affiliate-audit-CRITICAL.md</p>
+<div class="section">
+  <h2>⚠️ Warning Sites (63)</h2>
+  <div>
+    <span class="warn-badge">18wheelergear.com</span>
+    <span class="warn-badge">4runnerseats.com</span>
+    <span class="warn-badge">bestcarwashkit.com</span>
+    <span class="warn-badge">bestdetailingkit.com</span>
+    <span class="warn-badge">bestgolfcartaccessories.com</span>
+    <span class="warn-badge">bestheadlightrestoration.com</span>
+    <span class="warn-badge">bestledlightbars.com</span>
+    <span class="warn-badge">bestrecoverykit.com</span>
+    <span class="warn-badge">bestseatcover.com</span>
+    <span class="warn-badge">besttireinflator.com</span>
+    <span class="warn-badge">besttruckaccessories.com</span>
+    <span class="warn-badge">besttruckfloorliner.com</span>
+    <span class="warn-badge">besttrucktopper.com</span>
+    <span class="warn-badge">bigrigseatcovers.com</span>
+    <span class="warn-badge">broncobimini.com</span>
+    <span class="warn-badge">broncobumper.com</span>
+    <span class="warn-badge">broncocage.com</span>
+    <span class="warn-badge">broncocargo.com</span>
+    <span class="warn-badge">broncoexterior.com</span>
+    <span class="warn-badge">broncofloormats.com</span>
+    <span class="warn-badge">broncograbhandles.com</span>
+    <span class="warn-badge">broncointerior.com</span>
+    <span class="warn-badge">broncorollbars.com</span>
+    <span class="warn-badge">broncoseat.com</span>
+    <span class="warn-badge">broncoseatcover.com</span>
+    <span class="warn-badge">broncoshade.com</span>
+    <span class="warn-badge">broncotents.com</span>
+    <span class="warn-badge">broncotops.com</span>
+    <span class="warn-badge">broncoupgrade.com</span>
+    <span class="warn-badge">commandeerseats.com</span>
+    <span class="warn-badge">commanderstraps.com</span>
+    <span class="warn-badge">customvalvestemcaps.com</span>
+    <span class="warn-badge">cybertruckstorage.com</span>
+    <span class="warn-badge">desertarsenal.com</span>
+    <span class="warn-badge">dirtcommander.com</span>
+    <span class="warn-badge">fordbroncoaccessories.com</span>
+    <span class="warn-badge">garagestrap.com</span>
+    <span class="warn-badge">jeepseatcover.com</span>
+    <span class="warn-badge">jkseatcovers.com</span>
+    <span class="warn-badge">jlseatcovers.com</span>
+    <span class="warn-badge">jpscrambler.com</span>
+    <span class="warn-badge">jtseatcovers.com</span>
+    <span class="warn-badge">lightningaftermarket.com</span>
+    <span class="warn-badge">lightninginterior.com</span>
+    <span class="warn-badge">magnetoaccessories.com</span>
+    <span class="warn-badge">overlanderupgrades.com</span>
+    <span class="warn-badge">ovexoffroad.com</span>
+    <span class="warn-badge">partswiper.com</span>
+    <span class="warn-badge">rangewolf.com</span>
+    <span class="warn-badge">revbumpers.com</span>
+    <span class="warn-badge">rivians2.com</span>
+    <span class="warn-badge">rockcommander.com</span>
+    <span class="warn-badge">rollbarwraps.com</span>
+    <span class="warn-badge">savupgrades.com</span>
+    <span class="warn-badge">scramblerdiesel.com</span>
+    <span class="warn-badge">sidebysidegoods.com</span>
+    <span class="warn-badge">stoutparts.com</span>
+    <span class="warn-badge">tacomaseats-com</span>
+    <span class="warn-badge">tacoseatcovers.com</span>
+    <span class="warn-badge">tacticalseatcovers.com</span>
+    <span class="warn-badge">tirevalvestemcaps.com</span>
+    <span class="warn-badge">tjseatcovers.com</span>
+    <span class="warn-badge">x3bags.com</span>
+  </div>
+</div>
+
+<div class="section">
+  <h2>🔴 Critical Sites — Top 50 (by issue count)</h2>
+  <div class="crit-row">
+    <span class="crit-domain">120sfshed.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">18wheelgear.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">4x4king.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">4x4stomper.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">4x4stompers.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">accordionfilter.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">airfilterforpets-com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">allbrandsdirect.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">allergenairfilter-com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">altitudeparts.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">americapartygoods.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">americapartyproducts.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">americapartysupply.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">amerikantool.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">amishfirewood.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">amishhardwood.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">amishlandfirewood.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">amishlandhardwood.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">amishlandwood.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">andesvirusfilter.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">andesvirusmask.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">andesvirusmasks.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">andesvirusoutbreak.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">andesvirustransmission.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">andesvirustreatment.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">appalachianfirewood.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">autopartsreviewed-com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">autopartstorenearme.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">autoshipfilter-com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">autoshipfilter.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">bag.systems</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">barkstrap.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">batheater.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">batheaters.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">bedtread.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">bestantiagingsupplement.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">bestbaseballmitts.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">bestbattinggloves.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">bestblockchainapp.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">bestbloodsugarsupplement.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">bestcarwashkits.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">bestcompactlaser.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">bestcryptocurrencyapp.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">bestdiningapp.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">bestdiningapps.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">bestdogtrainingcourse.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">bestdutchoven.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">bestfatburnerpills.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">bestfiltering.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+  <div class="crit-row">
+    <span class="crit-domain">bestfilterreview.com</span>
+    <div class="crit-issues">multiple issues</div>
+  </div>
+</div>
+
+<div class="footer">
+  Built by Axl · 2026-07-25 06:01 UTC · Local-only scan (live HTTPS checks skipped)
+</div>
 </body>
 </html>
