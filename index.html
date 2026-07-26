@@ -6,7 +6,7 @@
 <title>Axl Affiliate Network Dashboard</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: #0f1117; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; padding: 24px; }
+  body { background: #0f1117; color: #e0e0e0; font-family: "Segoe UI", system-ui, sans-serif; padding: 24px; }
   h1 { color: #ff4b6e; font-size: 2rem; margin-bottom: 4px; }
   .subtitle { color: #888; font-size: 0.9rem; margin-bottom: 24px; }
   .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-bottom: 28px; }
@@ -27,353 +27,67 @@
   .delta-same { color: #888; }
   .delta-down { color: #4caf7d; }
   .footer { color: #444; font-size: 0.75rem; margin-top: 32px; text-align: center; }
+  .alert-banner { background: #2a0d0d; border: 1px solid #ef4444; border-radius: 8px; padding: 12px 16px; margin-bottom: 20px; color: #fca5a5; font-size: 0.9rem; }
+  .warn-row { background: #1a1d27; border-left: 3px solid #f0c040; border-radius: 6px; padding: 8px 12px; margin-bottom: 6px; font-size: 0.82rem; }
+  .warn-domain { color: #fde68a; font-weight: 600; }
 </style>
 </head>
 <body>
 <h1>⚡ Axl Affiliate Dashboard</h1>
-<p class="subtitle">Daily audit · 2026-07-25 06:01 UTC · 735 sites scanned</p>
+<p class="subtitle">Daily audit · 2026-07-26 06:00 UTC · 735 sites scanned</p>
+
+<div class="alert-banner">
+  ⚠️ <strong>Ongoing:</strong> 114 sites with invalid Amazon tracking tags (brazenprodu16-20) — unresolved since 2026-07-24. Revenue at risk.
+</div>
 
 <div class="stats-grid">
   <div class="stat-card green">
     <div class="num">37</div>
-    <div class="label">✅ Healthy</div>
+    <div class="label">✅ Healthy <span class="delta-same">→</span></div>
   </div>
   <div class="stat-card yellow">
-    <div class="num">63</div>
-    <div class="label">⚠️ Warning</div>
+    <div class="num">56</div>
+    <div class="label">⚠️ Warning <span class="delta-down">-7</span></div>
   </div>
   <div class="stat-card">
-    <div class="num">635</div>
-    <div class="label">🔴 Critical</div>
+    <div class="num">642</div>
+    <div class="label">🔴 Critical <span class="delta-up">+7</span></div>
   </div>
   <div class="stat-card blue">
     <div class="num">735</div>
     <div class="label">📦 Total Sites</div>
   </div>
-  <div class="stat-card green">
-    <div class="num delta-same">0</div>
+  <div class="stat-card yellow">
+    <div class="num delta-up">7</div>
     <div class="label">🆕 Newly Down</div>
   </div>
 </div>
 
 <div class="section">
   <h2>✅ Healthy Sites (37)</h2>
-  <div>
-    <span class="ok-badge">besttirepatch.com</span>
-    <span class="ok-badge">bigrigcovers.com</span>
-    <span class="ok-badge">broncorollbar.com</span>
-    <span class="ok-badge">cybertruckbumper.com</span>
-    <span class="ok-badge">cybertruckseatcover.com</span>
-    <span class="ok-badge">cybertruckseats.com</span>
-    <span class="ok-badge">dryvmotorsports.com</span>
-    <span class="ok-badge">exteriormolle.com</span>
-    <span class="ok-badge">gladiatorseatcover.com</span>
-    <span class="ok-badge">jeepbenchcovers.com</span>
-    <span class="ok-badge">jlcovers.com</span>
-    <span class="ok-badge">jlscrambler.com</span>
-    <span class="ok-badge">jlseatcover.com</span>
-    <span class="ok-badge">jlseats.com</span>
-    <span class="ok-badge">jluseatcovers.com</span>
-    <span class="ok-badge">jlutops.com</span>
-    <span class="ok-badge">jlutruck.com</span>
-    <span class="ok-badge">mollebag.com</span>
-    <span class="ok-badge">molleinterior.com</span>
-    <span class="ok-badge">mollesystems.com</span>
-    <span class="ok-badge">molletop.com</span>
-    <span class="ok-badge">ridgeupgrades.com</span>
-    <span class="ok-badge">ridgeutv.com</span>
-    <span class="ok-badge">scoutaccessories.com</span>
-    <span class="ok-badge">scoutupgrades.com</span>
-    <span class="ok-badge">scramblerseatcovers.com</span>
-    <span class="ok-badge">systemcovers.com</span>
-    <span class="ok-badge">tacticaltailgate.com</span>
-    <span class="ok-badge">usaseatcushion.com</span>
-    <span class="ok-badge">volconaccessories.com</span>
-    <span class="ok-badge">volconaftermarket.com</span>
-    <span class="ok-badge">volconparts.com</span>
-    <span class="ok-badge">volconseats.com</span>
-    <span class="ok-badge">wranglergrabhandles.com</span>
-    <span class="ok-badge">wranglerjeepaccessories.com</span>
-    <span class="ok-badge">wranglerseatcover.com</span>
-    <span class="ok-badge">wranglerseats.com</span>
-  </div>
+  <div><span class="ok-badge">besttirepatch.com</span><span class="ok-badge">bigrigcovers.com</span><span class="ok-badge">broncorollbar.com</span><span class="ok-badge">cybertruckbumper.com</span><span class="ok-badge">cybertruckseatcover.com</span><span class="ok-badge">cybertruckseats.com</span><span class="ok-badge">dryvmotorsports.com</span><span class="ok-badge">exteriormolle.com</span><span class="ok-badge">gladiatorseatcover.com</span><span class="ok-badge">jeepbenchcovers.com</span><span class="ok-badge">jlcovers.com</span><span class="ok-badge">jlscrambler.com</span><span class="ok-badge">jlseatcover.com</span><span class="ok-badge">jlseats.com</span><span class="ok-badge">jluseatcovers.com</span><span class="ok-badge">jlutops.com</span><span class="ok-badge">jlutruck.com</span><span class="ok-badge">mollebag.com</span><span class="ok-badge">molleinterior.com</span><span class="ok-badge">mollesystems.com</span><span class="ok-badge">molletop.com</span><span class="ok-badge">ridgeupgrades.com</span><span class="ok-badge">ridgeutv.com</span><span class="ok-badge">scoutaccessories.com</span><span class="ok-badge">scoutupgrades.com</span><span class="ok-badge">scramblerseatcovers.com</span><span class="ok-badge">systemcovers.com</span><span class="ok-badge">tacticaltailgate.com</span><span class="ok-badge">usaseatcushion.com</span><span class="ok-badge">volconaccessories.com</span><span class="ok-badge">volconaftermarket.com</span><span class="ok-badge">volconparts.com</span><span class="ok-badge">volconseats.com</span><span class="ok-badge">wranglergrabhandles.com</span><span class="ok-badge">wranglerjeepaccessories.com</span><span class="ok-badge">wranglerseatcover.com</span><span class="ok-badge">wranglerseats.com</span></div>
+</div>
+
+<div class="section"><h2>🆕 Newly Down Today (7)</h2><div class="crit-row"><span class="crit-domain">4runnerseats.com</span><div class="crit-issues">Was OK/Warning yesterday — now Critical</div></div><div class="crit-row"><span class="crit-domain">besttireinflator.com</span><div class="crit-issues">Was OK/Warning yesterday — now Critical</div></div><div class="crit-row"><span class="crit-domain">commandeerseats.com</span><div class="crit-issues">Was OK/Warning yesterday — now Critical</div></div><div class="crit-row"><span class="crit-domain">jkseatcovers.com</span><div class="crit-issues">Was OK/Warning yesterday — now Critical</div></div><div class="crit-row"><span class="crit-domain">rangewolf.com</span><div class="crit-issues">Was OK/Warning yesterday — now Critical</div></div><div class="crit-row"><span class="crit-domain">tacomaseats-com</span><div class="crit-issues">Was OK/Warning yesterday — now Critical</div></div><div class="crit-row"><span class="crit-domain">x3bags.com</span><div class="crit-issues">Was OK/Warning yesterday — now Critical</div></div></div>
+
+<div class="section">
+  <h2>⚠️ Warning Sites (showing 30 of 56)</h2>
+  <div class="crit-row"><span class="crit-domain">18wheelergear.com</span><div class="crit-issues">Minor issues</div></div><div class="crit-row"><span class="crit-domain">bestcarwashkit.com</span><div class="crit-issues">Minor issues</div></div><div class="crit-row"><span class="crit-domain">bestdetailingkit.com</span><div class="crit-issues">Minor issues</div></div><div class="crit-row"><span class="crit-domain">bestgolfcartaccessories.com</span><div class="crit-issues">Minor issues</div></div><div class="crit-row"><span class="crit-domain">bestheadlightrestoration.com</span><div class="crit-issues">Minor issues</div></div><div class="crit-row"><span class="crit-domain">bestledlightbars.com</span><div class="crit-issues">Minor issues</div></div><div class="crit-row"><span class="crit-domain">bestrecoverykit.com</span><div class="crit-issues">Minor issues</div></div><div class="crit-row"><span class="crit-domain">bestseatcover.com</span><div class="crit-issues">Minor issues</div></div><div class="crit-row"><span class="crit-domain">besttruckaccessories.com</span><div class="crit-issues">Minor issues</div></div><div class="crit-row"><span class="crit-domain">besttruckfloorliner.com</span><div class="crit-issues">Minor issues</div></div><div class="crit-row"><span class="crit-domain">besttrucktopper.com</span><div class="crit-issues">Minor issues</div></div><div class="crit-row"><span class="crit-domain">bigrigseatcovers.com</span><div class="crit-issues">Minor issues</div></div><div class="crit-row"><span class="crit-domain">broncobimini.com</span><div class="crit-issues">Minor issues</div></div><div class="crit-row"><span class="crit-domain">broncobumper.com</span><div class="crit-issues">Minor issues</div></div><div class="crit-row"><span class="crit-domain">broncocage.com</span><div class="crit-issues">Minor issues</div></div><div class="crit-row"><span class="crit-domain">broncocargo.com</span><div class="crit-issues">Minor issues</div></div><div class="crit-row"><span class="crit-domain">broncoexterior.com</span><div class="crit-issues">Minor issues</div></div><div class="crit-row"><span class="crit-domain">broncofloormats.com</span><div class="crit-issues">Minor issues</div></div><div class="crit-row"><span class="crit-domain">broncograbhandles.com</span><div class="crit-issues">Minor issues</div></div><div class="crit-row"><span class="crit-domain">broncointerior.com</span><div class="crit-issues">Minor issues</div></div><div class="crit-row"><span class="crit-domain">broncorollbars.com</span><div class="crit-issues">Minor issues</div></div><div class="crit-row"><span class="crit-domain">broncoseat.com</span><div class="crit-issues">Minor issues</div></div><div class="crit-row"><span class="crit-domain">broncoseatcover.com</span><div class="crit-issues">Minor issues</div></div><div class="crit-row"><span class="crit-domain">broncoshade.com</span><div class="crit-issues">Minor issues</div></div><div class="crit-row"><span class="crit-domain">broncotents.com</span><div class="crit-issues">Minor issues</div></div><div class="crit-row"><span class="crit-domain">broncotops.com</span><div class="crit-issues">Minor issues</div></div><div class="crit-row"><span class="crit-domain">broncoupgrade.com</span><div class="crit-issues">Minor issues</div></div><div class="crit-row"><span class="crit-domain">commanderstraps.com</span><div class="crit-issues">Minor issues</div></div><div class="crit-row"><span class="crit-domain">customvalvestemcaps.com</span><div class="crit-issues">Minor issues</div></div><div class="crit-row"><span class="crit-domain">cybertruckstorage.com</span><div class="crit-issues">Minor issues</div></div>
 </div>
 
 <div class="section">
-  <h2>⚠️ Warning Sites (63)</h2>
-  <div>
-    <span class="warn-badge">18wheelergear.com</span>
-    <span class="warn-badge">4runnerseats.com</span>
-    <span class="warn-badge">bestcarwashkit.com</span>
-    <span class="warn-badge">bestdetailingkit.com</span>
-    <span class="warn-badge">bestgolfcartaccessories.com</span>
-    <span class="warn-badge">bestheadlightrestoration.com</span>
-    <span class="warn-badge">bestledlightbars.com</span>
-    <span class="warn-badge">bestrecoverykit.com</span>
-    <span class="warn-badge">bestseatcover.com</span>
-    <span class="warn-badge">besttireinflator.com</span>
-    <span class="warn-badge">besttruckaccessories.com</span>
-    <span class="warn-badge">besttruckfloorliner.com</span>
-    <span class="warn-badge">besttrucktopper.com</span>
-    <span class="warn-badge">bigrigseatcovers.com</span>
-    <span class="warn-badge">broncobimini.com</span>
-    <span class="warn-badge">broncobumper.com</span>
-    <span class="warn-badge">broncocage.com</span>
-    <span class="warn-badge">broncocargo.com</span>
-    <span class="warn-badge">broncoexterior.com</span>
-    <span class="warn-badge">broncofloormats.com</span>
-    <span class="warn-badge">broncograbhandles.com</span>
-    <span class="warn-badge">broncointerior.com</span>
-    <span class="warn-badge">broncorollbars.com</span>
-    <span class="warn-badge">broncoseat.com</span>
-    <span class="warn-badge">broncoseatcover.com</span>
-    <span class="warn-badge">broncoshade.com</span>
-    <span class="warn-badge">broncotents.com</span>
-    <span class="warn-badge">broncotops.com</span>
-    <span class="warn-badge">broncoupgrade.com</span>
-    <span class="warn-badge">commandeerseats.com</span>
-    <span class="warn-badge">commanderstraps.com</span>
-    <span class="warn-badge">customvalvestemcaps.com</span>
-    <span class="warn-badge">cybertruckstorage.com</span>
-    <span class="warn-badge">desertarsenal.com</span>
-    <span class="warn-badge">dirtcommander.com</span>
-    <span class="warn-badge">fordbroncoaccessories.com</span>
-    <span class="warn-badge">garagestrap.com</span>
-    <span class="warn-badge">jeepseatcover.com</span>
-    <span class="warn-badge">jkseatcovers.com</span>
-    <span class="warn-badge">jlseatcovers.com</span>
-    <span class="warn-badge">jpscrambler.com</span>
-    <span class="warn-badge">jtseatcovers.com</span>
-    <span class="warn-badge">lightningaftermarket.com</span>
-    <span class="warn-badge">lightninginterior.com</span>
-    <span class="warn-badge">magnetoaccessories.com</span>
-    <span class="warn-badge">overlanderupgrades.com</span>
-    <span class="warn-badge">ovexoffroad.com</span>
-    <span class="warn-badge">partswiper.com</span>
-    <span class="warn-badge">rangewolf.com</span>
-    <span class="warn-badge">revbumpers.com</span>
-    <span class="warn-badge">rivians2.com</span>
-    <span class="warn-badge">rockcommander.com</span>
-    <span class="warn-badge">rollbarwraps.com</span>
-    <span class="warn-badge">savupgrades.com</span>
-    <span class="warn-badge">scramblerdiesel.com</span>
-    <span class="warn-badge">sidebysidegoods.com</span>
-    <span class="warn-badge">stoutparts.com</span>
-    <span class="warn-badge">tacomaseats-com</span>
-    <span class="warn-badge">tacoseatcovers.com</span>
-    <span class="warn-badge">tacticalseatcovers.com</span>
-    <span class="warn-badge">tirevalvestemcaps.com</span>
-    <span class="warn-badge">tjseatcovers.com</span>
-    <span class="warn-badge">x3bags.com</span>
-  </div>
+  <h2>🔴 Critical Sites (showing 60 of 642)</h2>
+  <div class="crit-row"><span class="crit-domain">120sfshed.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">18wheelgear.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">4runnerseats.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">4x4king.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">4x4stomper.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">4x4stompers.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">accordionfilter.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">airfilterforpets-com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">allbrandsdirect.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">allergenairfilter-com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">altitudeparts.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">americapartygoods.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">americapartyproducts.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">americapartysupply.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">amerikantool.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">amishfirewood.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">amishhardwood.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">amishlandfirewood.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">amishlandhardwood.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">amishlandwood.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">andesvirusfilter.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">andesvirusmask.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">andesvirusmasks.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">andesvirusoutbreak.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">andesvirustransmission.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">andesvirustreatment.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">appalachianfirewood.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">autopartsreviewed-com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">autopartstorenearme.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">autoshipfilter-com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">autoshipfilter.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">bag.systems</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">barkstrap.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">batheater.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">batheaters.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">bedtread.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">bestantiagingsupplement.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">bestbaseballmitts.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">bestbattinggloves.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">bestblockchainapp.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">bestbloodsugarsupplement.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">bestcarwashkits.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">bestcompactlaser.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">bestcryptocurrencyapp.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">bestdiningapp.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">bestdiningapps.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">bestdogtrainingcourse.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">bestdutchoven.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">bestfatburnerpills.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">bestfiltering.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">bestfilterreview.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">bestfoodapps.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">bestgaming-chair.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">bestgarageheater.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">besthairgrowthsupplement.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">besthardfirewood.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">bestheating-pad.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">besthomefilter-com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">besthomefilter.com</span><div class="crit-issues">Structural/link issues</div></div><div class="crit-row"><span class="crit-domain">besthomefilters.com</span><div class="crit-issues">Structural/link issues</div></div>
 </div>
 
 <div class="section">
-  <h2>🔴 Critical Sites — Top 50 (by issue count)</h2>
-  <div class="crit-row">
-    <span class="crit-domain">120sfshed.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">18wheelgear.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">4x4king.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">4x4stomper.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">4x4stompers.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">accordionfilter.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">airfilterforpets-com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">allbrandsdirect.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">allergenairfilter-com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">altitudeparts.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">americapartygoods.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">americapartyproducts.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">americapartysupply.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">amerikantool.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">amishfirewood.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">amishhardwood.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">amishlandfirewood.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">amishlandhardwood.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">amishlandwood.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">andesvirusfilter.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">andesvirusmask.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">andesvirusmasks.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">andesvirusoutbreak.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">andesvirustransmission.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">andesvirustreatment.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">appalachianfirewood.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">autopartsreviewed-com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">autopartstorenearme.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">autoshipfilter-com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">autoshipfilter.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">bag.systems</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">barkstrap.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">batheater.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">batheaters.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">bedtread.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">bestantiagingsupplement.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">bestbaseballmitts.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">bestbattinggloves.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">bestblockchainapp.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">bestbloodsugarsupplement.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">bestcarwashkits.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">bestcompactlaser.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">bestcryptocurrencyapp.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">bestdiningapp.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">bestdiningapps.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">bestdogtrainingcourse.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">bestdutchoven.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">bestfatburnerpills.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">bestfiltering.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
-  <div class="crit-row">
-    <span class="crit-domain">bestfilterreview.com</span>
-    <div class="crit-issues">multiple issues</div>
-  </div>
+  <h2>📋 Known Issues</h2>
+  <div class="crit-row"><span class="crit-domain">Tracking Tags</span><div class="crit-issues">114 sites using invalid tag brazenprodu16-20 — unresolved since 2026-07-24. Fix: regenerate with brazenprodu02-13</div></div>
+  <div class="crit-row"><span class="crit-domain">Blog Rotation</span><div class="crit-issues">0 fresh blog posts in last 24h (was 125 yesterday) — generator may be broken or stalled</div></div>
+  <div class="crit-row"><span class="crit-domain">whatarebest.com</span><div class="crit-issues">NO tracking tag at all — new issue as of 2026-07-25</div></div>
+  <div class="crit-row"><span class="crit-domain">HTTPS</span><div class="crit-issues">255 sites with broken/missing HTTPS — wildcard cert mismatch on GitHub Pages</div></div>
 </div>
 
-<div class="footer">
-  Built by Axl · 2026-07-25 06:01 UTC · Local-only scan (live HTTPS checks skipped)
-</div>
+<div class="footer">Generated 2026-07-26 06:00 UTC · affiliate-daily-health.js · Axl Network</div>
 </body>
 </html>
